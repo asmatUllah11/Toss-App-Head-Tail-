@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toss App</title>
+    <style>
+      * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  margin-top: 1.5rem;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  min-height: 30px;
+}
+
+button {
+  padding: 10px 36px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #2e38ca;
+  color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+     </style>
+  </head>
+  <body>
+    <h1>Toss App</h1>
+    <h3>Select Head / Tails</h3>
+    <button>Click</button>
+  </body>
+  <script>
+    // Toss of Head and Tail
+    let btn = document.querySelector("button");
+    let h2 = document.createElement("h2");
+    document.body.style.textAlign = "center";
+    // btn.style.backgroundColor="red"
+    // btn.style.color="white"
+    // btn.style.width="70px"
+    // btn.style.height="30px"
+    // btn.style.borderRadius="5px"
+    // btn.style.fontSize="16px"
+    btn.addEventListener("click", () => {
+      setTimeout(() => {
+        let randomNumber = Math.ceil(Math.random() * 2);
+        randomNumber == 1
+          ? (h2.textContent = "Head")
+          : (h2.textContent = "Tail");
+
+       
+        document.body.appendChild(h2);
+        console.log(randomNumber);
+      }, 1000);
+    });
+  </script>
+</html>
